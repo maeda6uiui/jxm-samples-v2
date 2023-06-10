@@ -1,4 +1,4 @@
-package com.github.dabasan.jxmsamplesv1;
+package com.github.maeda6uiui.jxmsamplesv2;
 
 import com.github.dabasan.jxm.properties.weapon.Weapon;
 import com.github.dabasan.jxm.properties.weapon.ids.IDSManipulator;
@@ -33,7 +33,11 @@ public class IDSManipulatorSample {
         // 武器情報を設定する
         manipulator.setWeapon(weapon);
 
-        // IDSファイルを保存する
-        manipulator.saveAsIDS("./Data/test.ids");
+        try {
+            // IDSファイルを保存する
+            manipulator.saveAsIDS("./Data/test.ids");
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 }

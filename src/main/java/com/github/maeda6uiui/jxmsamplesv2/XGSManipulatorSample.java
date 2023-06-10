@@ -1,4 +1,4 @@
-package com.github.dabasan.jxmsamplesv1;
+package com.github.maeda6uiui.jxmsamplesv2;
 
 import com.github.dabasan.jxm.properties.weapon.Weapon;
 import com.github.dabasan.jxm.properties.weapon.xgs.XGSManipulator;
@@ -34,7 +34,11 @@ public class XGSManipulatorSample {
         // 武器情報を設定する
         manipulator.setWeapons(weapons);
 
-        // XGSファイルを保存する
-        manipulator.saveAsXGS("./Data/weapons_2.xgs");
+        try {
+            // XGSファイルを保存する
+            manipulator.saveAsXGS("./Data/weapons_2.xgs");
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 }

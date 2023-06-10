@@ -1,4 +1,4 @@
-package com.github.dabasan.jxmsamplesv1;
+package com.github.maeda6uiui.jxmsamplesv2;
 
 import com.github.dabasan.jxm.bd1.BD1Manipulator;
 import com.github.dabasan.jxm.pd1.PD1Manipulator;
@@ -27,8 +27,12 @@ public class CreateMirroredMission {
         bd1Manipulator.invertZ();
         pd1Manipulator.invertZ();
 
-        // BD1とPD1を保存する
-        bd1Manipulator.saveAsBD1("./Data/mirrored_map.bd1");
-        pd1Manipulator.saveAsPD1("./Data/mirrored_points.pd1");
+        try {
+            // BD1とPD1を保存する
+            bd1Manipulator.saveAsBD1("./Data/mirrored_map.bd1");
+            pd1Manipulator.saveAsPD1("./Data/mirrored_points.pd1");
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 }

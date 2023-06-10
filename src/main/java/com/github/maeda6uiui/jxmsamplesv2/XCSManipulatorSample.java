@@ -1,4 +1,4 @@
-package com.github.dabasan.jxmsamplesv1;
+package com.github.maeda6uiui.jxmsamplesv2;
 
 import com.github.dabasan.jxm.properties.character.Character;
 import com.github.dabasan.jxm.properties.character.xcs.XCSManipulator;
@@ -34,7 +34,11 @@ public class XCSManipulatorSample {
         // キャラクター情報を設定する
         manipulator.setCharacters(characters);
 
-        // XCSファイルを保存する
-        manipulator.saveAsXCS("./Data/characters_2.xcs");
+        try {
+            // XCSファイルを保存する
+            manipulator.saveAsXCS("./Data/characters_2.xcs");
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 }

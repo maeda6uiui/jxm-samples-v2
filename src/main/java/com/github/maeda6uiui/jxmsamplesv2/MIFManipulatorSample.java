@@ -1,4 +1,4 @@
-package com.github.dabasan.jxmsamplesv1;
+package com.github.maeda6uiui.jxmsamplesv2;
 
 import com.github.dabasan.jxm.mif.MIFManipulator;
 import com.github.dabasan.jxm.mif.MissionInfo;
@@ -33,7 +33,11 @@ public class MIFManipulatorSample {
         // ミッション情報を設定する
         manipulator.setMissionInfo(missionInfo);
 
-        // MIFファイルを保存する
-        manipulator.saveAsMIF("./Data/test_2.mif", "Shift-JIS");
+        try {
+            // MIFファイルを保存する
+            manipulator.saveAsMIF("./Data/test_2.mif", "Shift-JIS");
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 }

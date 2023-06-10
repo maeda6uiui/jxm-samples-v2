@@ -1,4 +1,4 @@
-package com.github.dabasan.jxmsamplesv1;
+package com.github.maeda6uiui.jxmsamplesv2;
 
 import com.github.dabasan.jxm.properties.config.Config;
 import com.github.dabasan.jxm.properties.config.ConfigManipulator;
@@ -34,7 +34,11 @@ public class ConfigManipulatorSample {
         // configを設定する
         manipulator.setConfig(config);
 
-        // configを保存する
-        manipulator.saveAsDAT("./Data/config_2.dat");
+        try {
+            // configを保存する
+            manipulator.saveAsDAT("./Data/config_2.dat");
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 }

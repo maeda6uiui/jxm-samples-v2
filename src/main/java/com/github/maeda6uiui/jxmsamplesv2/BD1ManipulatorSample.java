@@ -1,4 +1,4 @@
-package com.github.dabasan.jxmsamplesv1;
+package com.github.maeda6uiui.jxmsamplesv2;
 
 import com.github.dabasan.jxm.bd1.BD1Block;
 import com.github.dabasan.jxm.bd1.BD1Manipulator;
@@ -37,8 +37,10 @@ public class BD1ManipulatorSample {
 
         // マップを操作する
         // ここでは、移動→Y軸回りの回転→スケールの変更
-        manipulator.translate(0.0f, 100.0f, 0.0f).rotY((float) Math.toRadians(45)).rescale(1.0f,
-                2.0f, 1.0f);
+        manipulator
+                .translate(0.0f, 100.0f, 0.0f)
+                .rotY((float) Math.toRadians(45))
+                .rescale(1.0f, 2.0f, 1.0f);
 
         // Z軸反転 (鏡像マップの作成)
         manipulator.invertZ();
@@ -62,10 +64,18 @@ public class BD1ManipulatorSample {
             block.textureIDs = rands;
         }
 
-        // BD1形式で保存する
-        manipulator.saveAsBD1("./Data/map_2.bd1");
+        try {
+            // BD1形式で保存する
+            manipulator.saveAsBD1("./Data/map_2.bd1");
 
-        // OBJ形式で保存する
-        manipulator.saveAsOBJ("./Data/map_2.obj", "./Data/map_2.mtl", "map_2.mtl", true);
+            // OBJ形式で保存する
+            manipulator.saveAsOBJ(
+                    "./Data/map_2.obj",
+                    "./Data/map_2.mtl",
+                    "map_2.mtl",
+                    true);
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 }

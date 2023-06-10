@@ -1,4 +1,4 @@
-package com.github.dabasan.jxmsamplesv1;
+package com.github.maeda6uiui.jxmsamplesv2;
 
 import com.github.dabasan.jxm.pd1.PD1Manipulator;
 import com.github.dabasan.jxm.pd1.PD1Point;
@@ -59,7 +59,11 @@ public class PD1ManipulatorSample {
             }
         }
 
-        // PD1形式で保存する
-        manipulator.saveAsPD1("./Data/points_2.pd1");
+        try {
+            // PD1形式で保存する
+            manipulator.saveAsPD1("./Data/points_2.pd1");
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 }

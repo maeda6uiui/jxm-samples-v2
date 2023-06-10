@@ -1,4 +1,4 @@
-package com.github.dabasan.jxmsamplesv1;
+package com.github.maeda6uiui.jxmsamplesv2;
 
 import com.github.dabasan.jxm.properties.weapon.Weapon;
 import com.github.dabasan.jxm.properties.weapon.openxops.WeaponCodeParser;
