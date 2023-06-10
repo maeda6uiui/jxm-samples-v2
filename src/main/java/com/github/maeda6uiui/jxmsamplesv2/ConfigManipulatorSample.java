@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * ConfigManipulatorを使用するサンプルコード
  *
- * @author Daba
+ * @author maeda6uiui
  */
 public class ConfigManipulatorSample {
     public static void main(String[] args) {

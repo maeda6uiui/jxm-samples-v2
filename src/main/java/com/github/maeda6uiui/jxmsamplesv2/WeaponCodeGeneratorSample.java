@@ -11,7 +11,7 @@ import java.util.Arrays;
  * 武器情報をOpenXOPSのソースコード形式で出力するサンプルコード<br>
  * XOPSの実行ファイルから読み込んだ武器情報をOpenXOPSのソースコード形式で出力する。
  *
- * @author Daba
+ * @author maeda6uiui
  */
 public class WeaponCodeGeneratorSample {
     public static void main(String[] args) {

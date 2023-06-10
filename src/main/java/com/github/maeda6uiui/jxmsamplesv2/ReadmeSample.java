@@ -7,7 +7,7 @@ import java.io.IOException;
 /**
  * JXMのReadmeに掲載するサンプルコード
  *
- * @author Daba
+ * @author maeda6uiui
  */
 public class ReadmeSample {
     public static void main(String[] args) {

@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * OpenXOPSのソースコードから武器情報を取得するサンプルコード
  *
- * @author Daba
+ * @author maeda6uiui
  */
 public class WeaponCodeParserSample {
     public static void main(String[] args) {

@@ -9,7 +9,7 @@ import java.util.Arrays;
 /**
  * XGSManipulatorを使用するサンプルコード
  *
- * @author Daba
+ * @author maeda6uiui
  */
 public class XGSManipulatorSample {
     public static void main(String[] args) {

@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * MIFManipulatorを使用するサンプルコード
  *
- * @author Daba
+ * @author maeda6uiui
  */
 public class MIFManipulatorSample {
     public static void main(String[] args) {

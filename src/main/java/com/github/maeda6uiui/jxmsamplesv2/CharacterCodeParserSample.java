@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * OpenXOPSのソースコードからキャラクター情報を取得するサンプルコード
  *
- * @author Daba
+ * @author maeda6uiui
  */
 public class CharacterCodeParserSample {
     public static void main(String[] args) {

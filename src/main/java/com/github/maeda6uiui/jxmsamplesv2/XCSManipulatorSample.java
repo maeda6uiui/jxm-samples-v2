@@ -9,7 +9,7 @@ import java.util.Arrays;
 /**
  * XCSManipulatorを使用するサンプルコード
  *
- * @author Daba
+ * @author maeda6uiui
  */
 public class XCSManipulatorSample {
     public static void main(String[] args) {

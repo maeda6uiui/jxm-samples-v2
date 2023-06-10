@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * IDSManipulatorを使用するサンプルコード
  *
- * @author Daba
+ * @author maeda6uiui
  */
 public class IDSManipulatorSample {
     public static void main(String[] args) {

@@ -11,7 +11,7 @@ import java.util.Arrays;
  * キャラクター情報をOpenXOPSのソースコード形式で出力するサンプルコード<br>
  * XOPSの実行ファイルから読み込んだキャラクター情報をOpenXOPSのソースコード形式で出力する。
  *
- * @author Daba
+ * @author maeda6uiui
  */
 public class CharacterCodeGeneratorSample {
     public static void main(String[] args) {

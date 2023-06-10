@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * 鏡像ミッションを作成するコード
  *
- * @author Daba
+ * @author maeda6uiui
  */
 public class CreateMirroredMission {
     public static void main(String[] args) {

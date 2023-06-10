@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * PD1Manipulatorを使用するサンプルコード
  *
- * @author Daba
+ * @author maeda6uiui
  */
 public class PD1ManipulatorSample {
     public static void main(String[] args) {

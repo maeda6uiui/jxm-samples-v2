@@ -9,7 +9,7 @@ import java.util.ArrayList;
 /**
  * 指定されたテクスチャIDの面を含むブロックのみを収集し、新たなBD1データとして保存します。
  *
- * @author Daba
+ * @author maeda6uiui
  */
 public class CollectBlocksWithSpecifiedTextureID {
     public static void main(String[] args) {

@@ -10,7 +10,7 @@ import java.util.Arrays;
 /**
  * XOPSの実行ファイルから武器情報・キャラクター情報を取得するサンプルコード
  *
- * @author Daba
+ * @author maeda6uiui
  */
 public class EXEManipulatorSample {
     public static void main(String[] args) {
