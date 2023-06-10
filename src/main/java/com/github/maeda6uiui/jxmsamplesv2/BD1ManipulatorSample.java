@@ -74,7 +74,7 @@ public class BD1ManipulatorSample {
                     "./Data/map_2.mtl",
                     "map_2.mtl",
                     true);
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

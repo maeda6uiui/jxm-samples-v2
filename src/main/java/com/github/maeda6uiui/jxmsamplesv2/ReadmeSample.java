@@ -51,7 +51,7 @@ public class ReadmeSample {
                     "./Data/map2.mtl",
                     "map2.mtl",
                     true);
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

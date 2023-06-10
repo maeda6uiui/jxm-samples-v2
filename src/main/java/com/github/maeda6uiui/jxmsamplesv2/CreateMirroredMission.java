@@ -31,7 +31,7 @@ public class CreateMirroredMission {
             // BD1とPD1を保存する
             bd1Manipulator.saveAsBD1("./Data/mirrored_map.bd1");
             pd1Manipulator.saveAsPD1("./Data/mirrored_points.pd1");
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

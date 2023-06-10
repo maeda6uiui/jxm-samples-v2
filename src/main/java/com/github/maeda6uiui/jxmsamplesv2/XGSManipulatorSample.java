@@ -37,7 +37,7 @@ public class XGSManipulatorSample {
         try {
             // XGSファイルを保存する
             manipulator.saveAsXGS("./Data/weapons_2.xgs");
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

@@ -35,7 +35,7 @@ public class EXEManipulatorSample {
             // 武器情報とキャラクター情報を実行ファイルに上書きする
             // 第2引数にnull以外の値を指定すると、上書きする前にバックアップを作成する
             manipulator.write("./Data/xops0975t.exe", "./Data/xops0975t_backup.exe");
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

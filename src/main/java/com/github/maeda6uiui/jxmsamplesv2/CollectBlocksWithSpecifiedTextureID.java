@@ -40,7 +40,7 @@ public class CollectBlocksWithSpecifiedTextureID {
         try {
             //BD1形式で保存する
             manipulator.saveAsBD1("./Data/map_2.bd1");
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

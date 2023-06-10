@@ -62,7 +62,7 @@ public class PD1ManipulatorSample {
         try {
             // PD1形式で保存する
             manipulator.saveAsPD1("./Data/points_2.pd1");
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

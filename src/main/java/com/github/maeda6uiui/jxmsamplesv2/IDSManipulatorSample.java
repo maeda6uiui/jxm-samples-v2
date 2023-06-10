@@ -36,7 +36,7 @@ public class IDSManipulatorSample {
         try {
             // IDSファイルを保存する
             manipulator.saveAsIDS("./Data/test.ids");
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

@@ -37,7 +37,7 @@ public class ConfigManipulatorSample {
         try {
             // configを保存する
             manipulator.saveAsDAT("./Data/config_2.dat");
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

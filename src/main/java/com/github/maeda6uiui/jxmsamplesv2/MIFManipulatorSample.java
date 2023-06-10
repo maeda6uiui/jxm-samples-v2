@@ -36,7 +36,7 @@ public class MIFManipulatorSample {
         try {
             // MIFファイルを保存する
             manipulator.saveAsMIF("./Data/test_2.mif", "Shift-JIS");
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

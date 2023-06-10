@@ -37,7 +37,7 @@ public class XCSManipulatorSample {
         try {
             // XCSファイルを保存する
             manipulator.saveAsXCS("./Data/characters_2.xcs");
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
