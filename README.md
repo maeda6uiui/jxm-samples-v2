@@ -1,4 +1,4 @@
-# jxm-samples-v1
+# jxm-samples-v2
 
 [JXM (Java XOPSManipulator)](https://github.com/maeda6uiui/jxm)のサンプルコード
 
