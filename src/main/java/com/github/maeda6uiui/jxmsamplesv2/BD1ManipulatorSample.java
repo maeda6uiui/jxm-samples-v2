@@ -46,7 +46,7 @@ public class BD1ManipulatorSample {
         manipulator.invertZ();
 
         // 行列を使用してマップを変形する
-        // ここでは、Z軸回りの回転→X軸回りの回転
+        // ここでは、X軸回りの回転→Z軸回りの回転
         var mat = new Matrix4f().rotateZ((float) Math.toRadians(45))
                 .rotateX((float) Math.toRadians(45));
         manipulator.transform(mat);
