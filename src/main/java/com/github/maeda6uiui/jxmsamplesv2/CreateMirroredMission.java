@@ -6,13 +6,13 @@ import com.github.dabasan.jxm.pd1.PD1Manipulator;
 import java.io.IOException;
 
 /**
- * 鏡像ミッションを作成するコード
+ * Creates mirrored mission
  *
  * @author maeda6uiui
  */
 public class CreateMirroredMission {
     public static void main(String[] args) {
-        //BD1ファイルとPD1ファイルを読み込む
+        //Load BD1 and PD1 files
         BD1Manipulator bd1Manipulator;
         PD1Manipulator pd1Manipulator;
         try {
@@ -23,12 +23,12 @@ public class CreateMirroredMission {
             return;
         }
 
-        //Z軸を反転する
+        //Invert z-axis
         bd1Manipulator.invertZ();
         pd1Manipulator.invertZ();
 
         try {
-            //BD1とPD1を保存する
+            //Save BD1 and PD1
             bd1Manipulator.saveAsBD1("./Data/mirrored_map.bd1");
             pd1Manipulator.saveAsPD1("./Data/mirrored_points.pd1");
         } catch (IOException e) {

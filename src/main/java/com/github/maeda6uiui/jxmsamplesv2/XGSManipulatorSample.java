@@ -7,13 +7,13 @@ import java.io.IOException;
 import java.util.Arrays;
 
 /**
- * XGSManipulatorを使用するサンプルコード
+ * Code sample for XGSManipulator
  *
  * @author maeda6uiui
  */
 public class XGSManipulatorSample {
     public static void main(String[] args) {
-        //XGSファイルを読み込む
+        //Load XGS file
         XGSManipulator manipulator;
         try {
             manipulator = new XGSManipulator("./Data/weapons.xgs");
@@ -22,20 +22,20 @@ public class XGSManipulatorSample {
             return;
         }
 
-        //武器情報を取得する
+        //Print weapon data
         Weapon[] weapons = manipulator.getWeapons();
-        Arrays.asList(weapons).forEach(w -> System.out.println(w));
+        Arrays.asList(weapons).forEach(System.out::println);
 
-        //武器名を変更する
+        //Change weapon names
         for (int i = 0; i < weapons.length; i++) {
             weapons[i].name = String.valueOf(i);
         }
 
-        //武器情報を設定する
+        //Set weapon data
         manipulator.setWeapons(weapons);
 
         try {
-            //XGSファイルを保存する
+            //Save as XGS
             manipulator.saveAsXGS("./Data/weapons_2.xgs");
         } catch (IOException e) {
             e.printStackTrace();

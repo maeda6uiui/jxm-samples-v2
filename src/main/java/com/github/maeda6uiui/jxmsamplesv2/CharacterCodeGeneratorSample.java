@@ -8,14 +8,13 @@ import java.io.IOException;
 import java.util.Arrays;
 
 /**
- * キャラクター情報をOpenXOPSのソースコード形式で出力するサンプルコード<br>
- * XOPSの実行ファイルから読み込んだキャラクター情報をOpenXOPSのソースコード形式で出力する。
+ * Outputs character data in the format of OpenXOPS source code
  *
  * @author maeda6uiui
  */
 public class CharacterCodeGeneratorSample {
     public static void main(String[] args) {
-        //XOPSの実行ファイルからキャラクター情報を読み込む
+        //Load character data from XOPS binary
         EXEManipulator manipulator;
         try {
             manipulator = new EXEManipulator("./Data/xops0975t.exe");
@@ -26,7 +25,7 @@ public class CharacterCodeGeneratorSample {
 
         Character[] characters = manipulator.getCharacters();
 
-        //OpenXOPSのソースコードを出力する
+        //Output character data in the format of OpenXOPS source code
         var generator = new CharacterCodeGenerator();
         String code = generator.generate(Arrays.asList(characters));
         System.out.println(code);

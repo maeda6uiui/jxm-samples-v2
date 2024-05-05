@@ -8,13 +8,13 @@ import java.io.IOException;
 import java.util.Arrays;
 
 /**
- * XOPSの実行ファイルから武器情報・キャラクター情報を取得するサンプルコード
+ * Loads weapon and character data from XOPS binary
  *
  * @author maeda6uiui
  */
 public class EXEManipulatorSample {
     public static void main(String[] args) {
-        //XOPSの実行ファイルを開く
+        //Open XOPS binary
         EXEManipulator manipulator;
         try {
             manipulator = new EXEManipulator("./Data/xops0975t.exe");
@@ -23,17 +23,17 @@ public class EXEManipulatorSample {
             return;
         }
 
-        //武器情報を取得する
+        //Print weapon data
         Weapon[] weapons = manipulator.getWeapons();
-        Arrays.asList(weapons).forEach(w -> System.out.println(w));
+        Arrays.asList(weapons).forEach(System.out::println);
 
-        //キャラクター情報を取得する
+        //Print character data
         Character[] characters = manipulator.getCharacters();
-        Arrays.asList(characters).forEach(c -> System.out.println(c));
+        Arrays.asList(characters).forEach(System.out::println);
 
         try {
-            //武器情報とキャラクター情報を実行ファイルに上書きする
-            //第2引数にnull以外の値を指定すると、上書きする前にバックアップを作成する
+            //Save weapon and character data to XOPS binary
+            //Backup file will be created if you pass non-null value to the second argument
             manipulator.write("./Data/xops0975t.exe", "./Data/xops0975t_backup.exe");
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,20 +1,18 @@
 package com.github.maeda6uiui.jxmsamplesv2;
 
 import com.github.dabasan.jxm.pd1.PD1Manipulator;
-import com.github.dabasan.jxm.pd1.PD1Point;
 import org.joml.Matrix4f;
 
 import java.io.IOException;
-import java.util.List;
 
 /**
- * PD1Manipulatorを使用するサンプルコード
+ * Code sample for PD1Manipulator
  *
  * @author maeda6uiui
  */
 public class PD1ManipulatorSample {
     public static void main(String[] args) {
-        //PD1ファイルを読み込む
+        //Load PD1 file
         PD1Manipulator manipulator;
         try {
             manipulator = new PD1Manipulator("./Data/points.pd1");
@@ -23,44 +21,49 @@ public class PD1ManipulatorSample {
             return;
         }
 
-        //ポイントの数を取得する
+        //Get the number of points
         int numPoints = manipulator.getNumPoints();
         System.out.println(numPoints);
 
-        //人の数(第1パラメータが1か6のポイントの数)を取得する
+        //Get the number of characters (the number of points whose first parameter is 6)
         int numCharacters = manipulator.getNumPoints(0, 1) + manipulator.getNumPoints(0, 6);
         System.out.println(numCharacters);
 
-        //ポイントを操作する
-        //ここでは、移動→Y軸回りの回転→スケールの変更
-        manipulator.translate(0.0f, 100.0f, 0.0f).rotY((float) Math.toRadians(45)).rescale(1.0f,
-                2.0f, 1.0f);
+        //Transform the points
+        //The operation order is
+        //rescaling -> rotation around the y-axis -> translation
+        manipulator
+                .translate(0.0f, 100.0f, 0.0f)
+                .rotY((float) Math.toRadians(45))
+                .rescale(1.0f, 2.0f, 1.0f)
+                .applyTransformation();
 
-        //ポイントの向きを回転させる
+        //Rotate the direction of points
         manipulator.rotateDirection((float) Math.toRadians(45));
 
-        //Z軸反転(鏡像ミッションの作成)
+        //Invert z-axis (create mirrored mission)
         manipulator.invertZ();
 
-        //行列を使用してポイントを変形する
-        //ここでは、X軸回りの回転→Z軸回りの回転
-        var mat = new Matrix4f().rotateZ((float) Math.toRadians(45))
+        //Transform the points with a matrix
+        //The operation order is
+        //rotation around the x-axis -> rotation around the z-axis
+        var mat = new Matrix4f()
+                .rotateZ((float) Math.toRadians(45))
                 .rotateX((float) Math.toRadians(45));
-        manipulator.transform(mat);
+        manipulator.transform(mat).applyTransformation();
 
-        //各ポイントを直接操作する
-        List<PD1Point> points = manipulator.getPoints();
-        for (var point : points) {
-            //武器のポイントだけ45度回転させる
+        //Example of direct manipulation of points
+        manipulator.getPoints().forEach(point -> {
+            //Rotate weapon points by 45 degrees
             if (point.parameters[0] == 2) {
                 float rotAngle = point.rotation;
                 rotAngle += (float) Math.toRadians(45);
                 point.rotation = rotAngle;
             }
-        }
+        });
 
         try {
-            //PD1形式で保存する
+            //Save as PD1
             manipulator.saveAsPD1("./Data/points_2.pd1");
         } catch (IOException e) {
             e.printStackTrace();

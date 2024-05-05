@@ -6,13 +6,13 @@ import com.github.dabasan.jxm.mif.MissionInfo;
 import java.io.IOException;
 
 /**
- * MIFManipulatorを使用するサンプルコード
+ * Code sample for MIFManipulator
  *
  * @author maeda6uiui
  */
 public class MIFManipulatorSample {
     public static void main(String[] args) {
-        //MIFファイルを読み込む
+        //Load MIF file
         MIFManipulator manipulator;
         try {
             manipulator = new MIFManipulator("./Data/test.mif", "Shift-JIS");
@@ -21,20 +21,20 @@ public class MIFManipulatorSample {
             return;
         }
 
-        //ミッション情報を取得する
+        //Print mission info
         MissionInfo missionInfo = manipulator.getMissionInfo();
         System.out.println(missionInfo);
 
-        //ミッションのタイトルを変更する
+        //Change mission title
         missionInfo.missionTitle = "Mission Title";
-        //マップのファイルパスを変更する
+        //Change filepath of map
         missionInfo.pathnameOfBlock = "./addon/test/map.bd1";
 
-        //ミッション情報を設定する
+        //Set mission info
         manipulator.setMissionInfo(missionInfo);
 
         try {
-            //MIFファイルを保存する
+            //Save as MIF
             manipulator.saveAsMIF("./Data/test_2.mif", "Shift-JIS");
         } catch (IOException e) {
             e.printStackTrace();

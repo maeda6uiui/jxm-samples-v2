@@ -11,13 +11,13 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * OpenXOPSのソースコードからキャラクター情報を取得するサンプルコード
+ * Parses character data from OpenXOPS source code
  *
  * @author maeda6uiui
  */
 public class CharacterCodeParserSample {
     public static void main(String[] args) {
-        //テキストファイルからOpenXOPSのソースコードを読み込む
+        //Load OpenXOPS source code from text file
         List<String> code;
         try {
             code = Files.readAllLines(Paths.get("./Data/character_code.txt"),
@@ -27,7 +27,7 @@ public class CharacterCodeParserSample {
             return;
         }
 
-        //OpenXOPSのソースコードからキャラクター情報を取得する
+        //Parse OpenXOPS source code and get character data
         var parser = new CharacterCodeParser();
         Map<Integer, Character> characters = parser.parse(code);
         characters.forEach((k, v) -> System.out.printf("%d: %s\n", k, v));

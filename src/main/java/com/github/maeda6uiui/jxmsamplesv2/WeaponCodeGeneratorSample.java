@@ -8,14 +8,13 @@ import java.io.IOException;
 import java.util.Arrays;
 
 /**
- * 武器情報をOpenXOPSのソースコード形式で出力するサンプルコード<br>
- * XOPSの実行ファイルから読み込んだ武器情報をOpenXOPSのソースコード形式で出力する。
+ * Outputs weapon data in the format of OpenXOPS source code
  *
  * @author maeda6uiui
  */
 public class WeaponCodeGeneratorSample {
     public static void main(String[] args) {
-        //XOPSの実行ファイルから武器情報を読み込む
+        //Load weapon data from XOPS binary
         EXEManipulator manipulator;
         try {
             manipulator = new EXEManipulator("./Data/xops0975t.exe");
@@ -26,7 +25,7 @@ public class WeaponCodeGeneratorSample {
 
         Weapon[] weapons = manipulator.getWeapons();
 
-        //OpenXOPSのソースコードを出力する
+        //Output OpenXOPS source code
         var generator = new WeaponCodeGenerator();
         String code = generator.generate(Arrays.asList(weapons));
         System.out.println(code);

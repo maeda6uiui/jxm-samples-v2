@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 /**
- * BD1形式をJSON形式に変換するサンプル
+ * Converts BD1 data to JSON
  *
  * @author maeda6uiui
  */
@@ -27,7 +27,7 @@ public class ConvertBD1ToJSONSample {
         List<BD1Block> blocks = manipulator.getBlocks();
 
         try {
-            //JSON形式で出力する
+            //Output as JSON
             var mapper = new ObjectMapper();
             String json = mapper
                     .writerWithDefaultPrettyPrinter()

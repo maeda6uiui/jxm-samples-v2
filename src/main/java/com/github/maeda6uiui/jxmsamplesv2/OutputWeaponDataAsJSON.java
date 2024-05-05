@@ -9,7 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 /**
- * 武器情報をJSON形式で出力するサンプル
+ * Outputs weapon data as JSON
  *
  * @author maeda6uiui
  */
@@ -26,7 +26,7 @@ public class OutputWeaponDataAsJSON {
         Weapon[] weapons = manipulator.getWeapons();
 
         try {
-            //JSON形式で出力する
+            //Output as JSON
             var mapper = new ObjectMapper();
             String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(weapons);
             Files.writeString(Paths.get("./Data/weapons.json"), json);

@@ -7,13 +7,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * 指定されたテクスチャIDの面を含むブロックのみを収集し、新たなBD1データとして保存します。
+ * Collects blocks that have specified texture ID and save it as BD1
  *
  * @author maeda6uiui
  */
 public class CollectBlocksWithSpecifiedTextureID {
     public static void main(String[] args) {
-        //BD1ファイルを読み込む
+        //Load BD1 file
         BD1Manipulator manipulator;
         try {
             manipulator = new BD1Manipulator("./Data/map.bd1");
@@ -22,13 +22,13 @@ public class CollectBlocksWithSpecifiedTextureID {
             return;
         }
 
-        //特定のテクスチャIDの面を含むブロックのみを収集する
-        final int COLLECT_TEXTURE_ID = 1;
+        //Collect blocks that have specified texture ID
+        final int COLLECTED_TEXTURE_ID = 1;
 
         var blocks = new ArrayList<BD1Block>();
         manipulator.getBlocks().forEach(b -> {
             for (int textureID : b.textureIDs) {
-                if (textureID == COLLECT_TEXTURE_ID) {
+                if (textureID == COLLECTED_TEXTURE_ID) {
                     blocks.add(b);
                     break;
                 }
@@ -38,7 +38,7 @@ public class CollectBlocksWithSpecifiedTextureID {
         manipulator.setBlocks(blocks);
 
         try {
-            //BD1形式で保存する
+            //Save as BD1
             manipulator.saveAsBD1("./Data/map_2.bd1");
         } catch (IOException e) {
             e.printStackTrace();

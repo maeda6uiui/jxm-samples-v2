@@ -7,13 +7,13 @@ import com.github.dabasan.jxm.properties.config.KeyCode;
 import java.io.IOException;
 
 /**
- * ConfigManipulatorを使用するサンプルコード
+ * Code sample for ConfigManipulator
  *
  * @author maeda6uiui
  */
 public class ConfigManipulatorSample {
     public static void main(String[] args) {
-        //config.datを読み込む
+        //Load config.dat
         ConfigManipulator manipulator;
         try {
             manipulator = new ConfigManipulator("./Data/config.dat");
@@ -22,20 +22,20 @@ public class ConfigManipulatorSample {
             return;
         }
 
-        //configを取得する
+        //Print config
         Config config = manipulator.getConfig();
         System.out.println(config);
 
-        //ZOOMのキーを変更する
+        //Change key for ZOOM
         config.zoom = KeyCode.KEY_MOUSE_R;
-        //プレイヤー名を変更する
+        //Change player name
         config.name = "TestPlayer";
 
-        //configを設定する
+        //Set config
         manipulator.setConfig(config);
 
         try {
-            //configを保存する
+            //Save config
             manipulator.saveAsDAT("./Data/config_2.dat");
         } catch (IOException e) {
             e.printStackTrace();

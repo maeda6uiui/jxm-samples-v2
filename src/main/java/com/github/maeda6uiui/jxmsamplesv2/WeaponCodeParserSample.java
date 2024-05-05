@@ -11,13 +11,13 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * OpenXOPSのソースコードから武器情報を取得するサンプルコード
+ * Parses weapon data from OpenXOPS source code
  *
  * @author maeda6uiui
  */
 public class WeaponCodeParserSample {
     public static void main(String[] args) {
-        //テキストファイルからOpenXOPSのソースコードを読み込む
+        //Load OpenXOPS source code from text file
         List<String> code;
         try {
             code = Files.readAllLines(Paths.get("./Data/weapon_code.txt"), StandardCharsets.UTF_8);
@@ -25,8 +25,8 @@ public class WeaponCodeParserSample {
             e.printStackTrace();
             return;
         }
-
-        //OpenXOPSのソースコードから武器情報を取得する
+        
+        //Parse OpenXOPS source code and get weapon data
         var parser = new WeaponCodeParser();
         Map<Integer, Weapon> weapons = parser.parse(code);
         weapons.forEach((k, v) -> System.out.printf("%d: %s\n", k, v));
