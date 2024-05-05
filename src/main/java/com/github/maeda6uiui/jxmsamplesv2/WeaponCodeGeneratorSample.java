@@ -15,7 +15,7 @@ import java.util.Arrays;
  */
 public class WeaponCodeGeneratorSample {
     public static void main(String[] args) {
-        // XOPSの実行ファイルから武器情報を読み込む
+        //XOPSの実行ファイルから武器情報を読み込む
         EXEManipulator manipulator;
         try {
             manipulator = new EXEManipulator("./Data/xops0975t.exe");
@@ -26,7 +26,7 @@ public class WeaponCodeGeneratorSample {
 
         Weapon[] weapons = manipulator.getWeapons();
 
-        // OpenXOPSのソースコードを出力する
+        //OpenXOPSのソースコードを出力する
         var generator = new WeaponCodeGenerator();
         String code = generator.generate(Arrays.asList(weapons));
         System.out.println(code);

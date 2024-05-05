@@ -17,7 +17,7 @@ import java.util.Map;
  */
 public class WeaponCodeParserSample {
     public static void main(String[] args) {
-        // テキストファイルからOpenXOPSのソースコードを読み込む
+        //テキストファイルからOpenXOPSのソースコードを読み込む
         List<String> code;
         try {
             code = Files.readAllLines(Paths.get("./Data/weapon_code.txt"), StandardCharsets.UTF_8);
@@ -26,7 +26,7 @@ public class WeaponCodeParserSample {
             return;
         }
 
-        // OpenXOPSのソースコードから武器情報を取得する
+        //OpenXOPSのソースコードから武器情報を取得する
         var parser = new WeaponCodeParser();
         Map<Integer, Weapon> weapons = parser.parse(code);
         weapons.forEach((k, v) -> System.out.printf("%d: %s\n", k, v));

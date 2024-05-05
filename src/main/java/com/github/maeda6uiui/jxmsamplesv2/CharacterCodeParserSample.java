@@ -17,7 +17,7 @@ import java.util.Map;
  */
 public class CharacterCodeParserSample {
     public static void main(String[] args) {
-        // テキストファイルからOpenXOPSのソースコードを読み込む
+        //テキストファイルからOpenXOPSのソースコードを読み込む
         List<String> code;
         try {
             code = Files.readAllLines(Paths.get("./Data/character_code.txt"),
@@ -27,7 +27,7 @@ public class CharacterCodeParserSample {
             return;
         }
 
-        // OpenXOPSのソースコードからキャラクター情報を取得する
+        //OpenXOPSのソースコードからキャラクター情報を取得する
         var parser = new CharacterCodeParser();
         Map<Integer, Character> characters = parser.parse(code);
         characters.forEach((k, v) -> System.out.printf("%d: %s\n", k, v));

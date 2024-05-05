@@ -15,7 +15,7 @@ import java.util.Arrays;
  */
 public class CharacterCodeGeneratorSample {
     public static void main(String[] args) {
-        // XOPSの実行ファイルからキャラクター情報を読み込む
+        //XOPSの実行ファイルからキャラクター情報を読み込む
         EXEManipulator manipulator;
         try {
             manipulator = new EXEManipulator("./Data/xops0975t.exe");
@@ -26,7 +26,7 @@ public class CharacterCodeGeneratorSample {
 
         Character[] characters = manipulator.getCharacters();
 
-        // OpenXOPSのソースコードを出力する
+        //OpenXOPSのソースコードを出力する
         var generator = new CharacterCodeGenerator();
         String code = generator.generate(Arrays.asList(characters));
         System.out.println(code);

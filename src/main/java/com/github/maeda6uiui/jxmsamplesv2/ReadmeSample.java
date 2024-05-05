@@ -5,13 +5,13 @@ import com.github.dabasan.jxm.bd1.BD1Manipulator;
 import java.io.IOException;
 
 /**
- * JXMのReadmeに掲載するサンプルコード
+ * Readme code sample for the JXM repo
  *
  * @author maeda6uiui
  */
 public class ReadmeSample {
     public static void main(String[] args) {
-        // BD1ファイルを読み込む
+        //Load BD1 file
         BD1Manipulator manipulator;
         try {
             manipulator = new BD1Manipulator("./Data/map.bd1");
@@ -20,32 +20,34 @@ public class ReadmeSample {
             return;
         }
 
-        // ブロックの数を取得する
+        //Get the number of blocks
         int numBlocks = manipulator.getNumBlocks();
         System.out.println(numBlocks);
 
-        // テクスチャのファイル名をすべて取得する
+        //Get all filenames of the textures
         manipulator.getTextureFilenames().forEach((k, v) -> System.out.printf("%d: %s\n", k, v));
 
-        // テクスチャのファイル名を変更する
+        //Change texture filenames
         manipulator.setTextureFilename(0, "test.bmp");
         manipulator.setTextureFilename(1, "test_2.bmp");
 
-        // マップを操作する
-        // ここでは、移動→Y軸回りの回転→スケールの変更
+        //Transform the map
+        //The operation order here is:
+        //Rescaling -> Rotation around the Y-axis -> Translation
         manipulator
                 .translate(0.0f, 100.0f, 0.0f)
                 .rotY((float) Math.toRadians(45))
-                .rescale(1.0f, 2.0f, 1.0f);
+                .rescale(1.0f, 2.0f, 1.0f)
+                .applyTransformation();
 
-        // Z軸反転(鏡像マップの作成)
+        //Invert z-axis (create mirrored map)
         manipulator.invertZ();
 
         try {
-            // BD1形式で保存する
+            //Save as BD1
             manipulator.saveAsBD1("./Data/map2.bd1");
 
-            // OBJ形式で保存する
+            //Save as OBJ
             manipulator.saveAsOBJ(
                     "./Data/map2.obj",
                     "./Data/map2.mtl",

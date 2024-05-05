@@ -13,7 +13,7 @@ import java.util.Arrays;
  */
 public class XCSManipulatorSample {
     public static void main(String[] args) {
-        // XCSファイルを読み込む
+        //XCSファイルを読み込む
         XCSManipulator manipulator;
         try {
             manipulator = new XCSManipulator("./Data/characters.xcs");
@@ -22,20 +22,20 @@ public class XCSManipulatorSample {
             return;
         }
 
-        // キャラクター情報を取得する
+        //キャラクター情報を取得する
         Character[] characters = manipulator.getCharacters();
         Arrays.asList(characters).forEach(c -> System.out.println(c));
 
-        // キャラクターの体力をすべて500にする
+        //キャラクターの体力をすべて500にする
         for (var character : characters) {
             character.hp = 500;
         }
 
-        // キャラクター情報を設定する
+        //キャラクター情報を設定する
         manipulator.setCharacters(characters);
 
         try {
-            // XCSファイルを保存する
+            //XCSファイルを保存する
             manipulator.saveAsXCS("./Data/characters_2.xcs");
         } catch (IOException e) {
             e.printStackTrace();

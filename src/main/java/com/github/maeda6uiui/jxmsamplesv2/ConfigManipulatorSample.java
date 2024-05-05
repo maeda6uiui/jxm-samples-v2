@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class ConfigManipulatorSample {
     public static void main(String[] args) {
-        // config.datを読み込む
+        //config.datを読み込む
         ConfigManipulator manipulator;
         try {
             manipulator = new ConfigManipulator("./Data/config.dat");
@@ -22,20 +22,20 @@ public class ConfigManipulatorSample {
             return;
         }
 
-        // configを取得する
+        //configを取得する
         Config config = manipulator.getConfig();
         System.out.println(config);
 
-        // ZOOMのキーを変更する
+        //ZOOMのキーを変更する
         config.zoom = KeyCode.KEY_MOUSE_R;
-        // プレイヤー名を変更する
+        //プレイヤー名を変更する
         config.name = "TestPlayer";
 
-        // configを設定する
+        //configを設定する
         manipulator.setConfig(config);
 
         try {
-            // configを保存する
+            //configを保存する
             manipulator.saveAsDAT("./Data/config_2.dat");
         } catch (IOException e) {
             e.printStackTrace();
