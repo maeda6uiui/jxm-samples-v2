@@ -6,7 +6,7 @@
     <groupId>com.github.dabasan</groupId>
     <artifactId>jxm-samples-v2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <description>JXM (Java XOPSManipulator)のサンプルコード</description>
+    <description>Code samples for JXM (Java XOPSManipulator)</description>
     <name>jxm-samples-v2</name>
     <url>https://github.com/maeda6uiui/jxm-samples-v2</url>
 
